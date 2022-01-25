@@ -10,7 +10,7 @@
   <app-square
     *ngFor="let val of squares; let i = index; trackBy: trackBy"
     [value]="val"
-    (click)="!val && makeMove(i)"
+    (click)="val || winner || makeMove(i)"
   >
   </app-square>
 </main>
