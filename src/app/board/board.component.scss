@@ -1,0 +1,11 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 90vw;
+  width: 90vw;
+  max-width: 500px;
+  max-height: 500px;
+  grid-gap: 5px;
+  margin: 2em auto;
+}
