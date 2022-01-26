@@ -2,6 +2,12 @@ pipeline {
   agent any
   tools { nodejs "nodejs" }
   stages{
+    stage("Install Application") {
+       steps {
+          print("--------------------------------Running Install--------------------------------")
+          sh 'npm install --production'
+       }
+    }
     stage("Build Application") {
        steps {
           print("--------------------------------Running Build--------------------------------")
