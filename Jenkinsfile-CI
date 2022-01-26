@@ -11,12 +11,13 @@ pipeline {
     stage("Build Application") {
        steps {
           print("--------------------------------Running Build--------------------------------")
-          sh 'npm run ng build'
+          sh 'npm run build'
        }
     }
     stage("Test Application") {
         steps {
           print("--------------------------------Running Tests--------------------------------")
+          sh 'npm run test'
        }
     }
     stage ('Invoke_CD') {
