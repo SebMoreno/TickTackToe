@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({ name: 'cosmic' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbButtonModule,
