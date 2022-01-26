@@ -5,13 +5,13 @@ pipeline {
     stage("Build Application") {
        steps {
           print("--------------------------------Running Build--------------------------------")
-          sh 'npm run build'
+          sh 'npm run ng build'
        }
     }
     stage("Deploy Application") {
        steps {
         print("--------------------------------Running Deploy--------------------------------")
-        sh 'ng deploy'
+        sh 'npm run ng deploy'
       }
     }
   }
