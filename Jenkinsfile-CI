@@ -1,0 +1,30 @@
+pipeline {
+  agent any
+  tools { nodejs "nodejs" }
+  stages{
+    stage("Install Application") {
+       steps {
+          print("--------------------------------Running Install--------------------------------")
+          sh 'npm install'
+       }
+    }
+    stage("Build Application") {
+       steps {
+          print("--------------------------------Running Build--------------------------------")
+          sh 'npm run ng build'
+       }
+    }
+    stage("Test Application") {
+        steps {
+          print("--------------------------------Running Tests--------------------------------")
+       }
+    }
+    stage ('Invoke_CD') {
+      steps {
+          build job: 'DCPS_CD', propagate: true, wait: true
+      }
+    }
+  }
+}
+
+

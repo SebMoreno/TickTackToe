@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  tools { nodejs "nodejs" }
+  stages{
+    stage("Build Application") {
+       steps {
+          print("--------------------------------Running Build--------------------------------")
+          sh 'npm run ng build'
+       }
+    }
+    stage("Deploy Application") {
+       steps {
+        print("--------------------------------Running Deploy--------------------------------")
+        sh 'npm run ng deploy'
+      }
+    }
+  }
+}
