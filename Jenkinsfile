@@ -17,13 +17,15 @@ pipeline {
     stage("Test Application") {
         steps {
           print("--------------------------------Running Tests--------------------------------")
-          sh 'npm run test'
+          sh 'npm run test-headless'
        }
     }
     stage ('Deploy Application') {
       steps {
           print("--------------------------------Deploying--------------------------------")
-          sh 'npm run deploy'
+          withCredentials([string(credentialsId: 'firebase_token', variable: 'token')]) {
+            sh "firebase deploy --token '${token}'"
+          }
       }
     }
   }
