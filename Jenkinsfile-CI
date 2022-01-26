@@ -12,5 +12,10 @@ pipeline {
           sh 'ng test'
        }
     }
+    stage ('Invoke_CD') {
+      steps {
+          build job: 'DCPS_CD', propagate: true, wait: true
+      }
+    }
   }
 }
