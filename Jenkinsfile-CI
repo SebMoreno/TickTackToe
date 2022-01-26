@@ -20,9 +20,10 @@ pipeline {
           sh 'npm run test'
        }
     }
-    stage ('Invoke_CD') {
+    stage ('Deploy Application') {
       steps {
-          build job: 'DCPS_CD', propagate: true, wait: true
+          print("--------------------------------Deploying--------------------------------")
+          sh 'npm run deploy'
       }
     }
   }
