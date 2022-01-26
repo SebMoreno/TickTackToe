@@ -5,7 +5,7 @@ pipeline {
     stage("Install Application") {
        steps {
           print("--------------------------------Running Install--------------------------------")
-          sh 'npm install --production'
+          sh 'npm install'
        }
     }
     stage("Build Application") {
