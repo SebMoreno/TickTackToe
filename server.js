@@ -6,11 +6,11 @@ function requireHTTPS(req, res, next) {
     next();
 }
 const express = require('express');
+const port = process.env.PORT || 8080;
 const app = express();
-const app = express();
-app.use(requireHTTPS);
-app.use(express.static('./dist/<name-on-package.json>'));
+//app.use(requireHTTPS);
+app.use(express.static('./dist/tick-tack-toe'));
 app.get('/*', (req, res) => {
     res.sendFile('index.html', {root: 'dist/tick-tack-toe-test/'});
 });
-app.listen(process.env.PORT || 8080);
+app.listen(port, () => console.log(`Listening on port ${port}`));
